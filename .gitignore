@@ -28,3 +28,6 @@ backup/
 .env
 # Local Netlify folder
 .netlify
+
+# TypeScript build info
+*.tsbuildinfo
