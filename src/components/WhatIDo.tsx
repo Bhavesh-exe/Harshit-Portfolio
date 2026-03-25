@@ -86,19 +86,19 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>VIDEO EDITING</h3>
-              <h4>Creative Storytelling</h4>
+              <h3>SOLO TRAVELER</h3>
+              <h4>Exploring Beyond Borders</h4>
               <p>
-                I transform raw footage into clean, engaging videos with smooth
-                cuts, perfect timing, and strong visual storytelling.
+                Discovering new cultures and hidden gems across the globe. I've explored various cities, from the bustling streets of Ahmedabad to the spiritual ghats of Rishikesh.
               </p>
-              <h5>Skillset & tools</h5>
+              <h5>Places & Experiences</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Adobe Premiere Pro</div>
-                <div className="what-tags">After Effects</div>
-                <div className="what-tags">DaVinci Resolve</div>
-                <div className="what-tags">Color Grading</div>
-                <div className="what-tags">Sound Design</div>
+                <div className="what-tags">Ahmedabad</div>
+                <div className="what-tags">Pushkar</div>
+                <div className="what-tags">Rishikesh</div>
+                <div className="what-tags">Haridwar</div>
+                <div className="what-tags">Dwarka</div>
+                <div className="what-tags">Somnath</div>
               </div>
               <div className="what-arrow"></div>
             </div>
