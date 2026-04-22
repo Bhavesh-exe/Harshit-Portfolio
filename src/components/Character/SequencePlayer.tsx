@@ -62,7 +62,7 @@ const SequencePlayer = (props: Props) => {
       img.src = `${basePath}/frame_${pad3(i)}${suffix}`;
       images.push(img);
     }
-    
+
     // Set up GSAP scrolling interactions globally
     setSequenceTimeline();
 
