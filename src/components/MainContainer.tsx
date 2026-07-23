@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Memories from "./Memories";
+import WhyWorkWithMeSection from "./WhyWorkWithMeSection";
 import setSplitText from "./utils/splitText";
 import useLenis from "../hooks/useLenis";
 
@@ -39,6 +40,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       {isDesktopView && children}
       <Landing>{!isDesktopView && children}</Landing>
       <About />
+      <WhyWorkWithMeSection />
       <WhatIDo />
       <Memories />
       <Suspense fallback={<div>Loading....</div>}>

@@ -147,3 +147,7 @@ export function setAllTimeline() {
     );
   }
 }
+
+export function setSequenceTimeline() {
+  // Optional GSAP scroll timeline for sequence player
+}

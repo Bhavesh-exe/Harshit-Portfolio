@@ -1,24 +1,26 @@
 import {
-/* 
-  FaGithub, 
-  FaLinkedinIn,
-  FaXTwitter, 
-*/
   FaInstagram,
   FaThreads,
 } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
-import { TbNotes } from "react-icons/tb";
-import { useEffect } from "react";
+import { TbSparkles } from "react-icons/tb";
+import { useEffect, useState } from "react";
 import HoverLinks from "./HoverLinks";
+import WhyWorkWithMeModal from "./WhyWorkWithMeModal";
 
 const SocialIcons = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
   useEffect(() => {
     const social = document.getElementById("social") as HTMLElement;
+
+    if (!social) return;
 
     social.querySelectorAll("span").forEach((item) => {
       const elem = item as HTMLElement;
       const link = elem.querySelector("a") as HTMLElement;
+
+      if (!link) return;
 
       const rect = elem.getBoundingClientRect();
       let mouseX = rect.width / 2;
@@ -54,48 +56,50 @@ const SocialIcons = () => {
       updatePosition();
 
       return () => {
-        elem.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mousemove", onMouseMove);
       };
     });
   }, []);
 
+  const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
+
   return (
-    <div className="icons-section">
-      <div className="social-icons" data-cursor="icons" id="social">
-        <span>
-          <a href="https://www.instagram.com/officialharshit_soni?igsh=N2dna2IycDhicXlk" target="_blank">
-            <FaInstagram />
-          </a>
-        </span>
-        <span>
-          <a href="https://www.threads.com/@officialharshit_soni" target="_blank">
-            <FaThreads />
-          </a>
-        </span>
-        {/* <span>
-          <a href="https://github.com/harshitsoni" target="_blank">
-            <FaGithub />
-          </a>
-        </span>
-        <span>
-          <a href="https://www.linkedin.com/in/harshitsoni" target="_blank">
-            <FaLinkedinIn />
-          </a>
-        </span>
-        <span>
-          <a href="https://x.com/harshitsoni" target="_blank">
-            <FaXTwitter />
-          </a>
-        </span> */}
+    <>
+      <div className="icons-section">
+        <div className="social-icons" data-cursor="icons" id="social">
+          <span>
+            <a href="https://www.instagram.com/officialharshit_soni?igsh=N2dna2IycDhicXlk" target="_blank" rel="noreferrer">
+              <FaInstagram />
+            </a>
+          </span>
+          <span>
+            <a href="https://www.threads.com/@officialharshit_soni" target="_blank" rel="noreferrer">
+              <FaThreads />
+            </a>
+          </span>
+        </div>
+        <a
+          className="resume-button why-work-btn"
+          href="#why-work-with-me"
+          onClick={handleButtonClick}
+          aria-label="Why Work With Me"
+        >
+          <HoverLinks text="WHY WORK WITH ME" />
+          <span>
+            <TbSparkles />
+          </span>
+        </a>
       </div>
-      <a className="resume-button" href="#">
-        <HoverLinks text="RESUME" />
-        <span>
-          <TbNotes />
-        </span>
-      </a>
-    </div>
+      <WhyWorkWithMeModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </>
   );
 };
 
 export default SocialIcons;
+

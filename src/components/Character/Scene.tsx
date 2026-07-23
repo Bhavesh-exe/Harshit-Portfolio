@@ -39,7 +39,6 @@ const Scene = () => {
       camera.position.set(0, 0, 2.5);
       camera.updateProjectionMatrix();
 
-      const clock = new THREE.Clock();
       const light = setLighting(scene);
       let progress = setProgress((value) => setLoading(value));
 
